@@ -1,5 +1,5 @@
 """
-Cluster the data into some clusters so that each cluster can have a best model according to it's datapoints
+Cluster the data into a predefined set of (k) clusters so that the model can determine the nearest cluster to get accurate predictions
 
 """
 import pandas as pd
