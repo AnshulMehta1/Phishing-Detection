@@ -5,7 +5,7 @@ import shutil
 class File_Operation:
     """
     This class serves 3 purpose
-    1. Model Saving
+    1. Model Saving in pickle format
     2. Model Loading 
     AND
     3. Select the correct model for the correct cluster
