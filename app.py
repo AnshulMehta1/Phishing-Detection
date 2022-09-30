@@ -3,11 +3,10 @@
 #
 from shutil import ExecError
 from wsgiref import simple_server
-from flask import Flask
-from flask import  request
-from flask import Response
+from flask import Flask, Response, request
+
 # Cross-origin resource sharing is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served
-# These 4 files are kept 
+# These 4 files are kept
 from flask_cors import CORS,cross_origin
 from data_training_validation_insertion import train_validation
 from data_training_model import train_model
@@ -34,11 +33,11 @@ def predictRouteClient():
         if request.json['folderPath'] is not None:
             path = request.json['folderPath']
             # #object initialization
-            pred_val = predict_validation(path) 
+            pred_val = predict_validation(path)
             #calling the prediction_validation function
-            pred_val.predictionValidation() 
+            pred_val.predictionValidation()
             #object initialization
-            pred = Prediction(path) 
+            pred = Prediction(path)
             # predicting for dataset present in database
             path = pred.predictionFromModel()
             return Response("Prediction File created at %s!!!" % path)
